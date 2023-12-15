@@ -1,11 +1,14 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-// import DashboardPage from "./pages/dashboard";
-// import CoinPage from "./pages/coin";
-// import ComparePage from "./pages/compare";
-// import WatchListPage from "./pages/watchlist";
+import Home from "./pages/home";
+import DashboardPage from "./pages/dashboard";
+import CoinPage from "./pages/coin";
+import ComparePage from "./pages/compare";
+import WatchListPage from "./pages/watchlist";
 import { useEffect } from "react";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserDashboard from "./pages/UserDashboard";
+import Login from "./pages/Login";
 
 function App() {
   var cursor;
@@ -50,14 +53,19 @@ function App() {
     <div>
       <div className="cursor" id="cursor" />
       <div className="cursor-pointer" id="cursor-pointer" />
+
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/a" element={<Home/>}/>
-          {/* <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/coin/:id" element={<CoinPage />} />
           <Route path="/compare" element={<ComparePage />} />
-          <Route path="/watchlist" element={<WatchListPage />} /> */}
+          <Route path="/watchlist" element={<WatchListPage />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/user" element={<UserDashboard />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
+      </BrowserRouter>
     </div>
   );
 }
