@@ -1,20 +1,33 @@
-const express = require("express")
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
-const { userModel } = require("../models/user.model")
+const express = require("express");
+const multer = require('multer');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const { userModel } = require("../models/user.model");
+const {processAndResizeImage} = require('../functions/imageProcess');
 const userRoute = express.Router()
 
+
+// Configure multer storage
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 userRoute.post("/register", async(req, res)=>{
-    const {name, email, gender, password} = req.body
+    const {password} = req.body
     try{
+        const resizedImage = await processAndResizeImage(req.file.buffer);
+
+        const profilePicture = {
+            "contentType":req.file.mimetype,
+             "data":resizedImage
+          }   
+
         bcrypt.hash(password, 10, async(err, hash)=>{
             if(err){
                 res.status(200).send(err)
             }else{
                 const user = new userModel({
-                    name,
-                    email,
-                    gender,
+                    ...req.body,
+                    profilePicture,
                     password:hash
                 })
                 await user.save()

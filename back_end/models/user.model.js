@@ -1,10 +1,16 @@
 const mongoose = require("mongoose")
 
 const userSchema = mongoose.Schema({
-    name:String,
+    fname:String,
+    lname:String,
+    pancard:String,
     email:String,
     gender:String,
-    password:String
+    password:String,
+    profilePicture: {
+        data: Buffer,
+        contentType: String,
+      }
 },{
     versionKey:false
 })
