@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import PhoneComponent from "./PhoneComponent";
 import { RWebShare } from "react-web-share";
 function LandingIntro() {
+  
   return (
     <div className={"wrapper"}>
       <div className={"info"}>

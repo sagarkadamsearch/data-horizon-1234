@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../components/Common/Header'
-import Footer from '../components/Common/Footer/footer'
+import Header from '../../components/Common/Header/index'
+import Footer from '../../components/Common/Footer/footer'
 
 function AdminDashboard() {
   return (
