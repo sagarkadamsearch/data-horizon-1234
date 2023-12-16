@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div className="footer">
       <a href="/">
-        <h2 style={{ color: "#fff" }}>CryptoTracker.</h2>
+        <h2 style={{ color: "#fff" }}>Invest Master.</h2>
       </a>
 
       <div className="socials-flex">
@@ -20,7 +20,7 @@ function Footer() {
         <a href="/">
           <InstagramIcon className="socials-icon" />
         </a>
-        <a href="mailto:avivashishta@gmail.com">
+        <a href="mailto:shivammaurya011@gmail.com">
           <EmailIcon className="socials-icon" />
         </a>
         <RWebShare

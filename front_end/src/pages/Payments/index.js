@@ -1,17 +1,17 @@
 import React from 'react'
-import Header from '../components/Common/Header'
-import Footer from '../components/Common/Footer/footer'
+import Header from '../../components/Common/Header/index'
+import Footer from '../../components/Common/Footer/footer'
 
-function UserDashboard() {
+function Payments() {
   return (
     <div>
       <Header/>
       <div style={{height:"60vh", color:"white", textAlign:"center", paddingTop:"50px"}}>
-        User Dashboard
+        Payments
       </div>
       <Footer/>
     </div>
   )
 }
 
-export default UserDashboard
+export default Payments
