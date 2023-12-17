@@ -9,6 +9,8 @@ import { convertNumbers } from "../../../functions/convertNumber";
 import BookmarkRoundedIcon from "@mui/icons-material/BookmarkRounded";
 import IconButton from "@mui/material/IconButton";
 import { addToWatchlist, removeFromWatchlist } from "../../../functions";
+import Button from "../../Common/Button/Button";
+import { Link } from "react-router-dom";
 
 function List({ coin, delay }) {
   const isWatchlist = localStorage.getItem("watchlist")
@@ -134,6 +136,11 @@ function List({ coin, delay }) {
             </IconButton>
           </div>
         )}
+      </td>
+      <td>
+        <Link to={`/payment/${coin.id}`}>
+          <Button onClick={()=>{}} text="Buy Now"/>
+        </Link>
       </td>
     </motion.tr>
   );

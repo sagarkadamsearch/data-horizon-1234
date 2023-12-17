@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
 import Login from "./pages/Login";
+import Payment from "./pages/Payment"
 
 function App() {
   var cursor;
@@ -64,6 +65,7 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/user" element={<UserDashboard />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/payment/:id" element={<Payment/>} />
         </Routes>
       </BrowserRouter>
     </div>
