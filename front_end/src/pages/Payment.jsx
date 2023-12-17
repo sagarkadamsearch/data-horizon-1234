@@ -87,9 +87,9 @@ function Payment() {
         }`}
       >
         <div className="info-flex">
-          <a href={`/coin/${id}`}>
+          {/* <a href={`/coin/${id}`}>
             <CoinLogo src={coin.image.large} className="coin-logo" />
-          </a>
+          </a> */}
           <a href={`/coin/${id}`}>
             <NameFlex className="name-flex">
               <p className="coin-symbol">coin.symbol</p>
