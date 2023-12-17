@@ -41,7 +41,7 @@ function LandingIntro() {
           transition={{ duration: 1, delay: 0.75 }}
         >
           <a href="/dashboard">
-            <Button text="Invest Now" />
+            <Button onClick={() => console.log("shared successfully!")} text="Invest Now" />
           </a>
 
           <RWebShare
