@@ -151,10 +151,10 @@ function UserDashboard() {
                 <div className='inner'>
                   <div className='port'>
                     <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-67d8f.appspot.com/o/fingerprint.png?alt=media&token=a3f7d811-3a90-4183-9136-b657c3b12cfd" alt="" />
-                    <p>Portfolio</p>
+                    <p>Account Balance</p>
                   </div>
                   <div className='dollar'>
-                    <h3>$258,789</h3>
+                    <h3>$2089</h3>
                   <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-67d8f.appspot.com/o/icons8-line-graph-24.png?alt=media&token=f9e17434-2cf8-4f49-818b-5ea95dac419a" alt="" />
                   </div>
                 </div>
