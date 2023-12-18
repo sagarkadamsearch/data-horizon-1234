@@ -30,6 +30,9 @@ function Signin() {
           email,
           password
       }
+      if(email==="admin@gmail.com"){
+        navigate("/admin")
+      }
       fetch("https://tough-handkerchief-dog.cyclic.app/users/login",{
           method:"POST",
           headers:{
@@ -43,7 +46,13 @@ function Signin() {
           console.log(data)
           localStorage.setItem("token",data.token)
           if(data.token){
-            navigate("/")
+            if(email==="admin@gmail.com"){
+              navigate("/admin")
+            }
+            else{
+              navigate("/user")
+            }
+          
           }
           else{
             alert("Wrong Credentials")
