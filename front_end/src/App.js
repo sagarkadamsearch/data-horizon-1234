@@ -10,6 +10,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
 import Login from "./pages/Login";
 import Payment from "./pages/Payment"
+import Signin from "./pages/Login/Signin";
+import Signup from "./pages/Login/Signup";
 
 function App() {
   var cursor;
@@ -64,7 +66,8 @@ function App() {
           <Route path="/watchlist" element={<WatchListPage />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/user" element={<UserDashboard />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/payment/:id" element={<Payment/>} />
         </Routes>
       </BrowserRouter>
