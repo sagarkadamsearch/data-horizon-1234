@@ -20,7 +20,6 @@ const YourApp = () => {
 
   return (
     <div>
-      <h1>Your App</h1>
       <LineGraph
         data={formattedData}
         width={600}

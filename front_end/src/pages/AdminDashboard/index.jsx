@@ -15,6 +15,8 @@ import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import Grid from '@mui/material/Grid';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import YourComponent from './graphData';
+import DashboardMain from './Dashboard';
+import Users from './Users';
 
 function AdminDashboard() {
   
@@ -29,7 +31,7 @@ function AdminDashboard() {
 
 
   return (
-    <div>
+    <div style={{marginBottom:"10px"}}>
       <Header/>
       {/* <div style={{height:"60vh", color:"white", textAlign:"center", paddingTop:"50px"}}>
         Admin Dashboard
@@ -73,31 +75,11 @@ function AdminDashboard() {
                 }}/>
               </div>
             </Nav>
-
-         
-           <Grid container>
-            <Grid container spacing={1} sx={{display:"flex",justifyContent:"center",marginTop:"10px"}}>
-              <Grid item  xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px" }}>
-              <Card name="Total Users" icon={<GroupAddIcon/>} count={3000}/>
-              </Grid>
-              <Grid item xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px" }}>
-              <Card name="Active Users" icon={<GroupAddIcon/>} count={3000}/>
-              </Grid>
-              <Grid item xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px"  }}>
-              <Card name="Total Transactions" icon={<PaymentsIcon/>} count={'$3000'}/>
-              </Grid>
-            </Grid>
-
-            <Grid>
-              
-            </Grid>
-            <div className='transactionDiv'>
-
-            </div>
-            </Grid>
+            <DashboardMain activeName={activeName}/> 
+            <Users activeName={activeName}/>          
           </LeftPart>  
       </MAIN>
-      <YourComponent/>
+    
       <Footer/>
     </div>
   )
@@ -147,11 +129,11 @@ flex-direction: row;
   }
 
   .dashboard {
-    color: ${(props) => (props.activeName === 'dashboard' ? 'green' : 'white')};
+    color: ${(props) => (props.activeName === 'dashboard' ? 'green' : '')};
   }
 
   .users {
-    color: ${(props) => (props.activeName === 'users' ? 'green' : 'white')};
+    color: ${(props) => (props.activeName === 'users' ? 'green' : '')};
   }
 
   .middlePart{
@@ -161,7 +143,6 @@ flex-direction: row;
 
 const DIV = styled.div`
 width: fit-content;
-height: 500px;
 border: 1px solid gray;
 color: white;
 `
@@ -193,14 +174,6 @@ const LeftPart = styled.div`
     grid-auto-rows: 2;
     justify-content: center;
     gap: 5%;
-  }
-
-  .transactionDiv{
-    width: 300px;
-    max-height:100%;
-    height: 300px;
-    overflow: auto;
-    border: 1px solid white;
   }
 `
 

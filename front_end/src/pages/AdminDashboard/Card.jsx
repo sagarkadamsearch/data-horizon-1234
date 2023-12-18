@@ -27,7 +27,7 @@ const DIV = styled.div`
   padding-bottom: 10px;
   padding-left: auto;
   padding-right: auto;
-  border: 1px solid white;
+  /* border: 1px solid gray; */
   color: white;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ const DIV = styled.div`
   gap: 10px;
   box-sizing: border-box;
   border-radius: 5px;
-
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   .cardName{
     /* position: absolute;
     top: 20px;
@@ -61,5 +61,9 @@ const DIV = styled.div`
   .count{
     font-weight: bold;
     font-size: large;
+  }
+
+  .cardName:nth-child(1){
+    color: black;
   }
 `
