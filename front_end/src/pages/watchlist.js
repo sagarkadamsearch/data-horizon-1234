@@ -22,11 +22,16 @@ function WatchListPage() {
   }, []);
 
   const getData = async () => {
-    const response = await get100Coins();
-    var myCoins = response.filter((coins) => watchlist.includes(coins.id));
-    setCoins(myCoins);
+    try {
+      const response = await get100Coins();
+      if (response) {
+        const myCoins = response.filter((coin) => watchlist.includes(coin.id));
+        setCoins(myCoins);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
-
   return (
     <div>
       <Header />
