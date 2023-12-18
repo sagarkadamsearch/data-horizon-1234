@@ -87,10 +87,6 @@ function Payment() {
             <p>$ {coin.market_data.current_price.inr}</p>
             <p style={{color: coin.market_data.price_change_24h_in_currency.inr < 0 ? "var(--red)" : "var(--green)",}}>$ {coin.market_data.price_change_24h_in_currency.inr}</p>
           </div>
-          
-          {/* <div>
-            <p>{coin.description.en}</p>
-          </div> */}
         </div>
         {/* Payment Section */}
         <div style={{display:"flex", flexDirection:"column", width:"40%"}}>
