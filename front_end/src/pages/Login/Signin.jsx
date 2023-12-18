@@ -3,6 +3,7 @@ import Header from '../../components/Common/Header'
 import Footer from '../../components/Common/Footer/footer'
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 
 const GridBox = styled(motion.div)`
@@ -22,13 +23,14 @@ function Signin() {
 
   const [email,setEmail]=useState("");
   const[password,setPassword]=useState("")
+  const navigate = useNavigate()
 
   const handlSingup=()=>{
       const payload={
           email,
           password
       }
-      fetch("https://investmaster.cyclic.app/users/login",{
+      fetch("https://tough-handkerchief-dog.cyclic.app/users/login",{
           method:"POST",
           headers:{
               "content-type":"application/json"
@@ -40,6 +42,12 @@ function Signin() {
       .then((data)=>{
           console.log(data)
           localStorage.setItem("token",data.token)
+          if(data.token){
+            navigate("/")
+          }
+          else{
+            alert("Wrong Credentials")
+          }
       })
 
       .catch(err=>console.log(err))
