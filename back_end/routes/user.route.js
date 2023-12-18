@@ -7,6 +7,10 @@ const {processAndResizeImage} = require('../functions/imageProcess');
 const userRoute = express.Router()
 
 
+userRoute.get('/',(req,res)=>{
+    res.send("Hello);
+             )
+
 userRoute.post("/register", async(req, res)=>{
     const {password} = req.body
     try{
