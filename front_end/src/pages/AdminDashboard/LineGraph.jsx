@@ -13,9 +13,9 @@ const LineGraph = ({ data, width, height, theme }) => {
 
     const lineColor = theme === 'black' ? '#ecf0f1' : '#3498db';
     const backgroundColor = theme === 'black' ? 'rgba(236, 240, 241, 0.2)' : 'rgba(52, 152, 219, 0.2)';
-    const pointColor = 'black' === 'black' ? '#ecf0f1' : '#3498db';
-    const gridColor = 'black' === 'black' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
-    const tickColor = 'black' === 'black' ? '#ecf0f1' : '#333';
+    const pointColor = theme === 'black' ? '#ecf0f1' : '#3498db';
+    const gridColor = theme === 'black' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    const tickColor = theme === 'black' ? '#ecf0f1' : '#333';
 
     chartRef.current.chart = new Chart(ctx, {
       type: 'line',
