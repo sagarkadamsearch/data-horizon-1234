@@ -7,10 +7,6 @@ const {processAndResizeImage} = require('../functions/imageProcess');
 const userRoute = express.Router()
 
 
-// Configure multer storage
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
-
 userRoute.post("/register", async(req, res)=>{
     const {password} = req.body
     try{
