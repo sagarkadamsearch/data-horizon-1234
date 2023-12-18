@@ -8,8 +8,8 @@ const userRoute = express.Router()
 
 
 userRoute.get('/',(req,res)=>{
-    res.send("Hello);
-             )
+    res.send("Hello");
+})
 
 userRoute.post("/register", async(req, res)=>{
     const {password} = req.body
@@ -28,7 +28,7 @@ userRoute.post("/register", async(req, res)=>{
             }
         });
     }catch(err){
-        res.status(400).send(err)
+        res.status(400).send({"Error":err})
     }
 })
 
