@@ -62,8 +62,8 @@ function Header() {
         <a href="/watchlist">
           <p className="link">Watchlist</p>
         </a>
-        <a href="/login">
-          <Button text="Login" />
+        <a href="/signin">
+          <Button onClick={()=>{}} text="Signin" />
         </a>
       </div>
       <MobileDrawer />
