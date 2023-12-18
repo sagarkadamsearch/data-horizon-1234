@@ -14,12 +14,6 @@ const upload = multer({ storage: storage });
 userRoute.post("/register", async(req, res)=>{
     const {password} = req.body
     try{
-        const resizedImage = await processAndResizeImage(req.file.buffer);
-
-        const profilePicture = {
-            "contentType":req.file.mimetype,
-             "data":resizedImage
-          }   
 
         bcrypt.hash(password, 10, async(err, hash)=>{
             if(err){
@@ -27,7 +21,6 @@ userRoute.post("/register", async(req, res)=>{
             }else{
                 const user = new userModel({
                     ...req.body,
-                    profilePicture,
                     password:hash
                 })
                 await user.save()
