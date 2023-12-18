@@ -44,18 +44,5 @@ export default Users;
 const DIV = styled.div`
 
 
-    
-.transactionDiv{
-    width: 300px;
-   height: 385px;
-    max-height:100%;
-    overflow: auto;
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  } 
+
 `
