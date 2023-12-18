@@ -3,6 +3,7 @@ import Header from '../../components/Common/Header'
 import Footer from '../../components/Common/Footer/footer'
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom'
 
 
 const GridBox = styled(motion.div)`
@@ -20,20 +21,34 @@ const GridBox = styled(motion.div)`
 
 function Signup() {
 
-    const [user, setUser] = useState({
-        firstName: "",
-        lastName: "",
-        email:"",
-        pass:"",
-      });
+  const [fname,setFname]=useState("");
+  const[lname,setLname]=useState("");
+  const [email,setEmail]=useState("");
+  const[password,setPassword]=useState("");
+  const navigate = useNavigate()
 
-    const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUser({
-        ...user,
-        [name]: value,
-    });
-    };
+  const handlSingup=()=>{
+      const payload={
+          fname,
+          lname,
+          email,
+          password
+      }
+      fetch("https://investmaster.cyclic.app/users/register",{
+          method:"POST",
+          headers:{
+              "content-type":"application/json"
+
+          },
+          body:JSON.stringify(payload)
+      })
+      .then(res=>res.json())
+      .then((data)=>{
+        navigate("/signin")
+        console.log(data)
+      })
+      .catch(err=>console.log(err))
+  }
     
   return (
     <div>
@@ -44,35 +59,35 @@ function Signup() {
             type="text"
             placeholder="First Name"
             name="firstName"
-            value={user.firstName}
-            onChange={handleInputChange}
+            value={fname}
+            onChange={(e)=>setFname(e.target.value)}
             style={{ marginBottom: "10px", padding: "5px" }}
           />
           <input
             type="text"
             placeholder="Last Name"
             name="lastName"
-            value={user.lastName}
-            onChange={handleInputChange}
+            value={lname}
+            onChange={(e)=>setLname(e.target.value)}
             style={{ marginBottom: "10px", padding: "5px" }}
           />
           <input
             type="text"
             placeholder="Email"
             name="email"
-            value={user.email}
-            onChange={handleInputChange}
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             style={{ marginBottom: "10px", padding: "5px" }}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             name="pass"
-            value={user.pass}
-            onChange={handleInputChange}
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
             style={{ marginBottom: "10px", padding: "5px" }}
           />
-          <button style={{ padding: "8px 16px", border:"none", borderRadius:"5px", cursor:"pointer", marginBottom: "10px", backgroundColor:"var(--blue)" }}>
+          <button style={{ padding: "8px 16px", border:"none", borderRadius:"5px", cursor:"pointer", marginBottom: "10px", backgroundColor:"var(--blue)" }} onClick={handlSingup}>
             SignUp
           </button>
           <a href='/signin' style={{cursor:"pointer", color:"blue"}}>already have an account signin here</a>

@@ -20,20 +20,30 @@ const GridBox = styled(motion.div)`
 
 function Signin() {
 
-    const [user, setUser] = useState({
-        firstName: "",
-        lastName: "",
-        email:"",
-        pass:"",
-      });
+  const [email,setEmail]=useState("");
+  const[password,setPassword]=useState("")
 
-    const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUser({
-        ...user,
-        [name]: value,
-    });
-    };
+  const handlSingup=()=>{
+      const payload={
+          email,
+          password
+      }
+      fetch("https://investmaster.cyclic.app/users/login",{
+          method:"POST",
+          headers:{
+              "content-type":"application/json"
+
+          },
+          body:JSON.stringify(payload)
+      })
+      .then(res=>res.json())
+      .then((data)=>{
+          console.log(data)
+          localStorage.setItem("token",data.token)
+      })
+
+      .catch(err=>console.log(err))
+  }
     
   return (
     <div>
@@ -44,19 +54,19 @@ function Signin() {
             type="text"
             placeholder="Email"
             name="email"
-            value={user.email}
-            onChange={handleInputChange}
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             style={{ marginBottom: "10px", padding: "5px" }}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             name="pass"
-            value={user.pass}
-            onChange={handleInputChange}
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
             style={{ marginBottom: "10px", padding: "5px" }}
           />
-          <button style={{ padding: "8px 16px", border:"none", borderRadius:"5px", cursor:"pointer", marginBottom: "10px", backgroundColor:"var(--blue)" }}>
+          <button style={{ padding: "8px 16px", border:"none", borderRadius:"5px", cursor:"pointer", marginBottom: "10px", backgroundColor:"var(--blue)" }} onClick={handlSingup}>
             SignIn
           </button>
           <a href='/signup' style={{cursor:"pointer", color:"blue"}}>New User signup here</a>
