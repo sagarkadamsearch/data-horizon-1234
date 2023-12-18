@@ -34,7 +34,7 @@ function Signup() {
           email,
           password
       }
-      fetch("https://investmaster.cyclic.app/users/register",{
+      fetch("https://tough-handkerchief-dog.cyclic.app/users/register",{
           method:"POST",
           headers:{
               "content-type":"application/json"
@@ -44,7 +44,12 @@ function Signup() {
       })
       .then(res=>res.json())
       .then((data)=>{
-        navigate("/signin")
+        if(data){
+          navigate("/signin")
+        }
+        else{
+          alert("Fill the Correct Credentials")
+        }
         console.log(data)
       })
       .catch(err=>console.log(err))
