@@ -155,7 +155,7 @@ function UserDashboard() {
                   </div>
                   <div className='dollar'>
                     <h3>$20089</h3>
-                  <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-67d8f.appspot.com/o/icons8-line-graph-24.png?alt=media&token=f9e17434-2cf8-4f49-818b-5ea95dac419a" alt="" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-67d8f.appspot.com/o/icons8-line-graph-24.png?alt=media&token=f9e17434-2cf8-4f49-818b-5ea95dac419a" alt="" />
                   </div>
                 </div>
                 <div className='graph'>
