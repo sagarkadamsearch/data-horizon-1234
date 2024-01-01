@@ -18,7 +18,11 @@ import YourComponent from './graphData';
 import Dashboard from './Dashboard';
 import TransactionCard from './TransactionCard';
 
+
 const DashboardMain = ({activeName}) => {
+
+
+
     return (
         <DIV style={{display:activeName=="dashboard"?"block":"none",}}>
             <Grid container>
