@@ -154,7 +154,9 @@ const getAllUserData = ()=>{
                 }}/>
               </div>
             </Nav>
-            <DashboardMain activeName={activeName}/> 
+            <DashboardMain activeName={activeName} TotalUsersCount={TotalUsersCount} 
+            ActiveUserCount={ActiveUserCount} DeaciveUserCount={DeaciveUserCount}/> 
+            
             <Users activeName={activeName} TotalUsersCount={TotalUsersCount} 
             ActiveUserCount={ActiveUserCount} DeaciveUserCount={DeaciveUserCount} users={users} setUsers={setUsers}
             />          

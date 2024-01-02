@@ -19,7 +19,7 @@ import Dashboard from './Dashboard';
 import TransactionCard from './TransactionCard';
 
 
-const DashboardMain = ({activeName}) => {
+const DashboardMain = ({activeName,TotalUsersCount,ActiveUserCount}) => {
 
 
 
@@ -28,10 +28,10 @@ const DashboardMain = ({activeName}) => {
             <Grid container>
             <Grid container spacing={1} sx={{display:"flex",justifyContent:"center",marginTop:"10px"}}>
               <Grid item  xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px" }}>
-              <Card name="Total Users" icon={<GroupAddIcon/>} count={3000}/>
+              <Card name="Total Users" icon={<GroupAddIcon/>} count={TotalUsersCount || <CircularProgress/>}/>
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px" }}>
-              <Card name="Active Users" icon={<GroupAddIcon/>} count={3000}/>
+              <Card name="Active Users" icon={<GroupAddIcon/>} count={ActiveUserCount || <CircularProgress/>}/>
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px"  }}>
               <Card name="Total Transactions" icon={<PaymentsIcon/>} count={'$3000'}/>
