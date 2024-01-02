@@ -30,14 +30,18 @@ function Signin() {
           email,
           password
       }
-      if(email==="admin@gmail.com"){
+
+      if(email=="admin@gmail.com"){
         navigate("/admin")
       }
-      fetch("https://tough-handkerchief-dog.cyclic.app/users/login",{
+      else{
+      navigate("/user");
+      }
+
+      fetch(`https://tough-handkerchief-dog.cyclic.app/users/login`,{
           method:"POST",
           headers:{
-              "content-type":"application/json"
-
+              "Content-Type":"application/json"
           },
           body:JSON.stringify(payload)
       })
@@ -46,14 +50,8 @@ function Signin() {
           console.log(data)
           localStorage.setItem("token",data.token)
           if(data.token){
-            if(email==="admin@gmail.com"){
-              navigate("/admin")
-            }
-            else{
               navigate("/user")
             }
-          
-          }
           else{
             alert("Wrong Credentials")
           }
