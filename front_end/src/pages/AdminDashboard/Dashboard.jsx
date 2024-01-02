@@ -17,21 +17,17 @@ import PaymentsIcon from '@mui/icons-material/Payments';
 import YourComponent from './graphData';
 import Dashboard from './Dashboard';
 import TransactionCard from './TransactionCard';
-import CircularProgress from '@mui/material/CircularProgress';
 
-const DashboardMain = ({activeName,TotalUsersCount,ActiveUserCount}) => {
-
-
-
+const DashboardMain = ({activeName}) => {
     return (
         <DIV style={{display:activeName=="dashboard"?"block":"none",}}>
             <Grid container>
             <Grid container spacing={1} sx={{display:"flex",justifyContent:"center",marginTop:"10px"}}>
               <Grid item  xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px" }}>
-              <Card name="Total Users" icon={<GroupAddIcon/>} count={TotalUsersCount || <CircularProgress/>}/>
+              <Card name="Total Users" icon={<GroupAddIcon/>} count={3000}/>
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px" }}>
-              <Card name="Active Users" icon={<GroupAddIcon/>} count={ActiveUserCount || <CircularProgress/>}/>
+              <Card name="Active Users" icon={<GroupAddIcon/>} count={3000}/>
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={3} sx={{ justifySelf: 'center',margin:"5px"  }}>
               <Card name="Total Transactions" icon={<PaymentsIcon/>} count={'$3000'}/>

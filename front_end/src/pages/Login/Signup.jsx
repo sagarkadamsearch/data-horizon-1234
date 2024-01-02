@@ -34,7 +34,7 @@ function Signup() {
           email,
           password
       }
-      fetch(`${process.env.REACT_APP_API_URL}/users/register`,{
+      fetch("https://tough-handkerchief-dog.cyclic.app/users/register",{
           method:"POST",
           headers:{
               "content-type":"application/json"
